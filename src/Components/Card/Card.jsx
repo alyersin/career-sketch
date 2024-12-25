@@ -17,20 +17,17 @@ export default function Card({
       bgColor="white"
       maxW="sm"
     >
-      {/* Render the image if provided */}
+      {/* RENDER IMAGE */}
       {image && <Image src={image} alt={title} borderRadius="md" mb={4} />}
-
-      {/* Title */}
+      {/* TITLE */}
       <Heading fontSize="lg" mb={2}>
         {title}
       </Heading>
-
-      {/* Description */}
+      {/* DESCRIPTION */}
       <Text fontSize="md" color="gray.600" mb={4}>
         {description}
       </Text>
-
-      {/* Button */}
+      {/* BUTON */}
       {buttonText && (
         <Button colorScheme="blue" onClick={onClick}>
           {buttonText}

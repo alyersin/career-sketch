@@ -1,10 +1,8 @@
 "use client";
-// components/VerticalCarousel.js
 import { Box, Flex, Image } from "@chakra-ui/react";
-import { keyframes } from "@emotion/react"; // Import keyframes from @emotion/react
+import { keyframes } from "@emotion/react";
 
 export default function VerticalCarousel({ images, direction = "down" }) {
-  // Keyframe animations for infinite scrolling
   const scrollDown = keyframes`
     0% { transform: translateY(0); }
     100% { transform: translateY(-100%); } /* Scrolls fully through all items */
@@ -15,27 +13,20 @@ export default function VerticalCarousel({ images, direction = "down" }) {
     100% { transform: translateY(100%); } /* Scrolls fully through all items */
   `;
 
-  const duration = `${images.length * 3}s`; // Adjust duration based on number of cards
+  const duration = `${images.length * 3}s`;
   const animation = `${
     direction === "down" ? scrollDown : scrollUp
   } ${duration} linear infinite`;
 
-  // Duplicate images multiple times to ensure a seamless loop
   const loopedImages = [...images];
 
   return (
-    <Box
-      // className="borderRed"
-      position="relative"
-      width="300px"
-      height="70vh"
-      overflow="hidden"
-    >
+    <Box position="relative" width="300px" height="70vh" overflow="hidden">
       <Flex
         className="borderBlue"
         flexDirection="column"
-        animation={animation} // Add the animation dynamically
-        gap="2" // No gaps between items
+        animation={animation}
+        gap="2"
         height="100%"
       >
         {loopedImages.map((src, index) => (

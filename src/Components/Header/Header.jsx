@@ -1,5 +1,5 @@
 import { Box, Button } from "@chakra-ui/react";
-import Link from "next/link"; // Import Link from Next.js
+import Link from "next/link";
 import React from "react";
 import "/src/app/globals.css";
 import Image from "next/image";
@@ -31,7 +31,6 @@ export default function Header() {
         gap={4}
       >
         <Link href="/pages/contact-us/" passHref>
-          {/* Remove `as="a"` and let Link handle the navigation */}
           <Button colorScheme="blue" variant="outline">
             Contact us
           </Button>

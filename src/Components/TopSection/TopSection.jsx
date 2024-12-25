@@ -1,12 +1,11 @@
 "use client";
 
 import { Box, Heading, Text, Button } from "@chakra-ui/react";
-import Link from "next/link"; // Import Link from Next.js
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { keyframes } from "@emotion/react"; // Import keyframes for animations
+import { keyframes } from "@emotion/react";
 import VerticalCarousel from "../Carousel/VerticalCarousel";
 
-// Define the slideUp animation
 const slideUp = keyframes`
   0% { transform: translateY(100%); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
@@ -29,10 +28,9 @@ export default function TopSection() {
     "https://via.placeholder.com/300x200?text=10",
   ];
 
-  const [isVisible, setIsVisible] = useState(false); // Control visibility
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Trigger the animation on page load
     setIsVisible(true);
   }, []);
 
@@ -47,15 +45,14 @@ export default function TopSection() {
       py={2}
       px={10}
     >
-      {/* Left Section with Animation */}
       <Box
         className="borderBlue"
         display="flex"
         flexDirection="column"
         padding="66px 26px 36px 26px"
         gap={10}
-        animation={isVisible ? `${slideUp} 0.5s ease-out` : undefined} // Trigger animation
-        opacity={isVisible ? 1 : 0} // Hide the Box initially
+        animation={isVisible ? `${slideUp} 0.5s ease-out` : undefined}
+        opacity={isVisible ? 1 : 0}
       >
         <Heading fontFamily="Roboto Slab, serif" fontSize={60}>
           Build Your Professional CV Today
