@@ -1,5 +1,5 @@
 {
-  "name": "career-sketch",
+  "name": "tech-blog",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,8 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106",
-    "next": "15.0.3"
+    "@chakra-ui/icons": "^2.2.4",
+    "@chakra-ui/react": "^2.7.2",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.7.0",
+    "framer-motion": "^6.0.0",
+    "next": "15.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.4.0",
+    "react-slick": "^0.30.3",
+    "reflect-metadata": "^0.2.2",
+    "slick-carousel": "^1.8.1",
+    "sqlite3": "^5.1.7",
+    "typeorm": "^0.3.20"
   }
 }

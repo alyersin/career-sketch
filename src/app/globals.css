@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -17,6 +19,7 @@ body {
 }
 
 body {
+  overflow: hidden;
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
@@ -39,4 +42,14 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.borderGreen {
+  /* border: 1px solid green; */
+}
+.borderBlue {
+  /* border: 1px solid blue; */
+}
+.borderRed {
+  /* border: 1px solid red; */
 }
