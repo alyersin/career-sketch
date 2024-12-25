@@ -1,10 +1,13 @@
 import { Box, Button } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
+import { usePathname } from "next/navigation";
 import "/src/app/globals.css";
 import Image from "next/image";
 
 export default function Header() {
+  const isLoginPage = usePathname();
+
   return (
     <Box
       className="borderBlue"
@@ -22,25 +25,27 @@ export default function Header() {
         </Link>
       </Box>
 
-      <Box
-        className="borderGreen"
-        display="flex"
-        flexDirection="row"
-        justifyContent="center"
-        alignItems="center"
-        gap={4}
-      >
-        <Link href="/pages/contact-us/" passHref>
-          <Button colorScheme="blue" variant="outline">
-            Contact us
-          </Button>
-        </Link>
-        <Link href="/pages/login/" passHref>
-          <Button bgColor="#05A2FF" color="white">
-            Login
-          </Button>
-        </Link>
-      </Box>
+      {isLoginPage !== "/pages/login" && (
+        <Box
+          className="borderGreen"
+          display="flex"
+          flexDirection="row"
+          justifyContent="center"
+          alignItems="center"
+          gap={4}
+        >
+          <Link href="/pages/contact-us/" passHref>
+            <Button colorScheme="blue" variant="outline">
+              Contact us
+            </Button>
+          </Link>
+          <Link href="/pages/login/" passHref>
+            <Button bgColor="#05A2FF" color="white">
+              Login
+            </Button>
+          </Link>
+        </Box>
+      )}
     </Box>
   );
 }

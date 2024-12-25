@@ -1,11 +1,19 @@
-import { Box, Heading } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import "/src/app/globals.css";
 import TopSection from "@/Components/TopSection/TopSection";
 
 export default function Home() {
   return (
-    <Box className="borderRed" maxWidth="1280px" mx="auto">
-      <TopSection />
+    <Box>
+      {/* TopSection with full width */}
+      <Box className="borderRed" w="100vw" mx="auto">
+        <TopSection />
+      </Box>
+
+      {/* Constrained content below */}
+      <Box className="borderBlue" maxWidth="1280px" mx="auto" p={4}>
+        {/* Add other page content here */}
+      </Box>
     </Box>
   );
 }

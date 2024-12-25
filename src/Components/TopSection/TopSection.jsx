@@ -36,53 +36,63 @@ export default function TopSection() {
 
   return (
     <Box
+      className="borderBlue"
       display="flex"
       flexDirection="row"
       justifyContent="space-between"
-      maxWidth={1280}
       bgColor={"#8ecae6"}
       mx="auto"
       py={2}
       px={10}
     >
       <Box
-        className="borderBlue"
         display="flex"
-        flexDirection="column"
-        padding="66px 26px 36px 26px"
-        gap={10}
-        animation={isVisible ? `${slideUp} 0.5s ease-out` : undefined}
-        opacity={isVisible ? 1 : 0}
-      >
-        <Heading fontFamily="Roboto Slab, serif" fontSize={60}>
-          Build Your Professional CV Today
-        </Heading>
-
-        <Text fontSize={18}>
-          Stand out to employers with a customized CV tailored to showcase your
-          skills and experience. Easy to use, professional templates, and ready
-          to download in just minutes. Start now for free!
-        </Text>
-
-        <Link href="/pages/resume/" passHref>
-          <Button width="60%" bgColor="#e76f51" color="white">
-            Begin here
-          </Button>
-        </Link>
-      </Box>
-
-      {/* Right Section with Carousels */}
-      <Box
-        className="borderGreen"
-        display="flex"
+        flexDirection="row"
         justifyContent="space-between"
-        gap="20px"
+        maxWidth={1280}
+        mx="auto"
+        py={2}
+        px={10}
       >
-        {/* Downward scrolling carousel */}
-        <VerticalCarousel images={imagesDown} direction="down" />
+        <Box
+          className="borderBlue"
+          display="flex"
+          flexDirection="column"
+          padding="66px 26px 36px 26px"
+          gap={10}
+          animation={isVisible ? `${slideUp} 0.5s ease-out` : undefined}
+          opacity={isVisible ? 1 : 0}
+        >
+          <Heading fontFamily="Roboto Slab, serif" fontSize={56}>
+            Build Your Professional CV Today
+          </Heading>
 
-        {/* Upward scrolling carousel */}
-        <VerticalCarousel images={imagesUp} direction="up" />
+          <Text fontSize={18}>
+            Stand out to employers with a customized CV tailored to showcase
+            your skills and experience. Easy to use, professional templates, and
+            ready to download in just minutes. Start now for free!
+          </Text>
+
+          <Link href="/pages/resume/" passHref>
+            <Button width="60%" bgColor="#e76f51" color="white">
+              Begin here
+            </Button>
+          </Link>
+        </Box>
+
+        {/* Right Section with Carousels */}
+        <Box
+          className="borderGreen"
+          display="flex"
+          justifyContent="space-between"
+          gap="20px"
+        >
+          {/* Downward scrolling carousel */}
+          <VerticalCarousel images={imagesDown} direction="down" />
+
+          {/* Upward scrolling carousel */}
+          <VerticalCarousel images={imagesUp} direction="up" />
+        </Box>
       </Box>
     </Box>
   );

@@ -8,7 +8,7 @@ import Header from "@/Components/Header/Header";
 export default function RootLayout({ children }) {
   const pathname = usePathname();
 
-  const hideHeaderOn = ["/pages/login", "/register"];
+  const hideHeaderOn = ["/login", "/register"];
 
   return (
     <html lang="en">
