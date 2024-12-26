@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import "/src/app/globals.css";
 import TopSection from "@/Components/TopSection/TopSection";
+import ReviewsSection from "@/Components/ReviewSection/ReviewSection";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
 
       {/* Constrained content below */}
       <Box className="borderBlue" maxWidth="1280px" mx="auto" p={4}>
-        {/* Add other page content here */}
+        <ReviewsSection />
       </Box>
     </Box>
   );

@@ -43,7 +43,6 @@ export default function TopSection() {
       bgColor={"#8ecae6"}
       mx="auto"
       py={2}
-      px={10}
     >
       <Box
         display="flex"

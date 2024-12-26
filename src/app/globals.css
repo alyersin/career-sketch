@@ -38,18 +38,18 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-}
+} */
 
 .borderGreen {
-  /* border: 1px solid green; */
+  border: 1px solid green;
 }
 .borderBlue {
-  /* border: 1px solid blue; */
+  border: 1px solid blue;
 }
 .borderRed {
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
