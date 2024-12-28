@@ -32,36 +32,30 @@ export default function Register() {
           //   bg="white"
           boxShadow="lg"
         >
-          {/* Heading */}
           <Heading as="h1" size="lg" textAlign="center" mb={6}>
             Create Your Account
           </Heading>
 
-          {/* Full Name Input */}
           <FormControl id="fullName" mb={4}>
             <FormLabel>Full Name</FormLabel>
             <Input type="text" placeholder="Enter your full name" />
           </FormControl>
 
-          {/* Email Input */}
           <FormControl id="email" mb={4}>
             <FormLabel>Email Address</FormLabel>
             <Input type="email" placeholder="Enter your email" />
           </FormControl>
 
-          {/* Password Input */}
           <FormControl id="password" mb={4}>
             <FormLabel>Password</FormLabel>
             <Input type="password" placeholder="Enter your password" />
           </FormControl>
 
-          {/* Confirm Password Input */}
           <FormControl id="confirmPassword" mb={4}>
             <FormLabel>Confirm Password</FormLabel>
             <Input type="password" placeholder="Re-enter your password" />
           </FormControl>
 
-          {/* Register Button */}
           <Button
             width="100%"
             colorScheme="blue"
