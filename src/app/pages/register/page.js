@@ -7,13 +7,13 @@ import {
   FormControl,
   FormLabel,
   Input,
-  Link,
   Button,
   Flex,
   Text,
+  Link,
 } from "@chakra-ui/react";
 
-export default function Login() {
+export default function Register() {
   return (
     <Box minHeight="100vh">
       <Header />
@@ -29,43 +29,54 @@ export default function Login() {
           p={8}
           borderRadius="md"
           width={{ base: "100%", sm: "400px" }}
-          // bg="white"
+          //   bg="white"
           boxShadow="lg"
         >
+          {/* Heading */}
           <Heading as="h1" size="lg" textAlign="center" mb={6}>
-            Your Gateway to Success
+            Create Your Account
           </Heading>
 
+          {/* Full Name Input */}
+          <FormControl id="fullName" mb={4}>
+            <FormLabel>Full Name</FormLabel>
+            <Input type="text" placeholder="Enter your full name" />
+          </FormControl>
+
+          {/* Email Input */}
           <FormControl id="email" mb={4}>
             <FormLabel>Email Address</FormLabel>
-            <Input type="email" />
+            <Input type="email" placeholder="Enter your email" />
           </FormControl>
 
+          {/* Password Input */}
           <FormControl id="password" mb={4}>
-            <Flex justify="space-between" align="center">
-              <FormLabel>Password</FormLabel>
-              <Link href="#" color="blue.500" fontSize="sm">
-                Forgot your password?
-              </Link>
-            </Flex>
-            <Input type="password" />
+            <FormLabel>Password</FormLabel>
+            <Input type="password" placeholder="Enter your password" />
           </FormControl>
 
+          {/* Confirm Password Input */}
+          <FormControl id="confirmPassword" mb={4}>
+            <FormLabel>Confirm Password</FormLabel>
+            <Input type="password" placeholder="Re-enter your password" />
+          </FormControl>
+
+          {/* Register Button */}
           <Button
             width="100%"
-            bgColor="#05A2FF"
             colorScheme="blue"
             mt={4}
             py={6}
             fontWeight="bold"
           >
-            Sign in
+            Register
           </Button>
 
+          {/* Login Link */}
           <Text textAlign="center" mt={4} fontSize="sm" color="gray.600">
-            New user?{" "}
-            <Link href="/pages/register" color="blue.500" fontWeight="bold">
-              Register here
+            Already have an account?{" "}
+            <Link href="/pages/login" color="blue.500" fontWeight="bold">
+              Sign in
             </Link>
           </Text>
         </Box>

@@ -9,15 +9,17 @@ import Footer from "@/Components/Footer/Footer";
 export default function RootLayout({ children }) {
   const pathname = usePathname();
 
-  const hideHeaderOn = ["/login", "/register"];
+  const hideHeaderAndFooterOn = ["/pages/login", "/pages/register"];
 
   return (
     <html lang="en">
       <body suppressHydrationWarning>
         <ChakraProvider theme={theme}>
-          {!hideHeaderOn.includes(pathname) && <Header />}
+          {!hideHeaderAndFooterOn.includes(pathname) && <Header />}
+
           {children}
-          <Footer />
+
+          {!hideHeaderAndFooterOn.includes(pathname) && <Footer />}
         </ChakraProvider>
       </body>
     </html>

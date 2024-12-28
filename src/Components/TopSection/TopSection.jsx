@@ -79,17 +79,14 @@ export default function TopSection() {
           </Link>
         </Box>
 
-        {/* Right Section with Carousels */}
         <Box
           className="borderGreen"
           display="flex"
           justifyContent="space-between"
           gap="20px"
         >
-          {/* Downward scrolling carousel */}
           <VerticalCarousel images={imagesDown} direction="down" />
 
-          {/* Upward scrolling carousel */}
           <VerticalCarousel images={imagesUp} direction="up" />
         </Box>
       </Box>
