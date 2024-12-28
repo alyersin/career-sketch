@@ -21,21 +21,21 @@ const ResumeSlider = () => {
   const resumes = [
     {
       id: 1,
-      img: "https://via.placeholder.com/400x300?text=Resume+1",
+      img: "../assets/top-resume-1.avif",
       title: "Sarah Thompson",
       description:
         "Marketing specialist with a proven track record of driving brand growth and engagement.",
     },
     {
       id: 2,
-      img: "https://via.placeholder.com/400x300?text=Resume+2",
+      img: "../assets/top-resume-2.avif",
       title: "Michael Davis",
       description:
         "Software engineer skilled in developing scalable and efficient web applications.",
     },
     {
       id: 3,
-      img: "https://via.placeholder.com/400x300?text=Resume+3",
+      img: "../assets/top-resume-3.avif",
       title: "Emily Brown",
       description:
         "Graphic designer passionate about creating visually appealing and user-friendly designs.",
