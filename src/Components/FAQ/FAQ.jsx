@@ -10,9 +10,10 @@ import {
   AccordionPanel,
   AccordionIcon,
   Text,
+  Divider,
 } from "@chakra-ui/react";
 
-const FAQ = () => {
+export default function FAQ() {
   const faqItems = [
     {
       question: "How can I use this app for free?",
@@ -48,35 +49,34 @@ const FAQ = () => {
 
   return (
     <Box maxWidth="800px" mx="auto" py={10} px={4}>
-      <Heading as="h2" size="lg" textAlign="center" mb={6}>
+      <Heading as="h2" size="lg" textAlign="center" mb={6} color="gray.800">
         Frequently Asked Questions
       </Heading>
-      <Accordion allowToggle>
+      <Accordion allowToggle allowMultiple>
         {faqItems.map((item, index) => (
           <AccordionItem
             key={index}
-            border="1px solid #E2E8F0"
-            borderRadius="md"
-            mb={4}
+            border="none"
+            _last={{ borderBottom: "none" }}
           >
             <h2>
               <AccordionButton
-                _expanded={{ bg: "blue.100", color: "blue.800" }}
+                _expanded={{ bg: "blue.50", color: "blue.800" }}
+                py={4}
               >
-                <Box flex="1" textAlign="left" fontWeight="bold">
+                <Box flex="1" textAlign="left" fontWeight="bold" fontSize="lg">
                   {item.question}
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
             </h2>
-            <AccordionPanel pb={4}>
+            <AccordionPanel pb={4} color="gray.600" fontSize="md">
               <Text>{item.answer}</Text>
             </AccordionPanel>
+            {index < faqItems.length - 1 && <Divider borderColor="gray.300" />}
           </AccordionItem>
         ))}
       </Accordion>
     </Box>
   );
-};
-
-export default FAQ;
+}

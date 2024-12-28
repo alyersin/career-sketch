@@ -8,6 +8,7 @@ export default function Footer() {
       display="flex"
       flexDirection="row"
       justifyContent="space-between"
+      bg="#2E404A"
       maxWidth={1280}
       mx="auto"
       py={6}
@@ -17,7 +18,7 @@ export default function Footer() {
         className="borderGreen"
         textAlign="center"
         fontSize="sm"
-        color="gray.500"
+        color="gray.400"
         py={4}
       >
         © {new Date().getFullYear()} Ersin. All rights reserved.

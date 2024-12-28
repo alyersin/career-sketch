@@ -11,7 +11,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 
-export default function resume() {
+export default function TemplateOne() {
   return (
     <Box
       maxWidth="960px"

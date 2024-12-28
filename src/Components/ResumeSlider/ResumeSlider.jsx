@@ -4,7 +4,7 @@ import React from "react";
 import { Box, Heading, Text, Image, Button, Flex } from "@chakra-ui/react";
 import Slider from "react-slick";
 
-const ResumeSlider = () => {
+export default function ResumeSlider() {
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -87,6 +87,4 @@ const ResumeSlider = () => {
       </Box>
     </Box>
   );
-};
-
-export default ResumeSlider;
+}

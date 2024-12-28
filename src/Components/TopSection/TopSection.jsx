@@ -72,7 +72,7 @@ export default function TopSection() {
             ready to download in just minutes. Start now for free!
           </Text>
 
-          <Link href="/pages/resume/" passHref>
+          <Link href="/pages/select-template/" passHref>
             <Button width="60%" bgColor="#e76f51" color="white">
               Begin here
             </Button>
