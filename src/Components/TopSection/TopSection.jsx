@@ -57,36 +57,52 @@ export default function TopSection() {
           className="borderBlue"
           display="flex"
           flexDirection="column"
-          padding="66px 26px 36px 26px"
+          padding={{ base: "20px", md: "66px 26px 36px 26px" }}
           gap={10}
           animation={isVisible ? `${slideUp} 0.5s ease-out` : undefined}
           opacity={isVisible ? 1 : 0}
+          width={{ base: "100%", md: "50%" }}
         >
-          <Heading fontFamily="Roboto Slab, serif" fontSize={56}>
+          <Heading
+            fontFamily="Roboto Slab, serif"
+            fontSize={{ base: "28px", md: "40px", lg: "56px" }}
+            textAlign={{ base: "center", md: "left" }}
+          >
             Build Your Professional CV Today
           </Heading>
 
-          <Text fontSize={18}>
+          <Text
+            fontSize={{ base: "16px", md: "18px" }}
+            textAlign={{ base: "center", md: "left" }}
+          >
             Stand out to employers with a customized CV tailored to showcase
             your skills and experience. Easy to use, professional templates, and
             ready to download in just minutes. Start now for free!
           </Text>
 
-          <Link href="/pages/select-template/" passHref>
-            <Button width="60%" bgColor="#e76f51" color="white">
-              Begin here
-            </Button>
-          </Link>
+          <Box
+            display="flex"
+            justifyContent={{ base: "center", md: "flex-start" }}
+          >
+            <Link href="/pages/select-template/" passHref>
+              <Button
+                width={{ base: "80%", md: "60%" }}
+                bgColor="#e76f51"
+                color="white"
+              >
+                Begin here
+              </Button>
+            </Link>
+          </Box>
         </Box>
 
         <Box
           className="borderGreen"
-          display="flex"
+          display={{ base: "none", md: "flex" }}
           justifyContent="space-between"
           gap="20px"
         >
           <VerticalCarousel images={imagesDown} direction="down" />
-
           <VerticalCarousel images={imagesUp} direction="up" />
         </Box>
       </Box>
