@@ -18,7 +18,7 @@ export default function page() {
       >
         <Heading
           as="h2"
-          fontSize="56px"
+          fontSize={{ base: "26px", md: "54px" }}
           fontWeight="bold"
           fontFamily="Roboto Slab, serif"
         >
