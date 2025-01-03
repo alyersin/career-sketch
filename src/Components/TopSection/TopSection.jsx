@@ -85,11 +85,7 @@ export default function TopSection() {
             justifyContent={{ base: "center", md: "flex-start" }}
           >
             <Link href="/pages/select-template/" passHref>
-              <Button
-                width={{ base: "80%", md: "60%" }}
-                bgColor="#e76f51"
-                color="white"
-              >
+              <Button width="100%" bgColor="#e76f51" color="white">
                 Begin here
               </Button>
             </Link>

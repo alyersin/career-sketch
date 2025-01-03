@@ -12,15 +12,16 @@ import {
   DrawerBody,
   VStack,
   IconButton,
+  Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import Link from "next/link";
 import React from "react";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Header() {
-  const isLoginPage = usePathname();
+  const { data: session } = useSession();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
 
@@ -52,27 +53,38 @@ export default function Header() {
         />
       </Box>
 
-      {isLoginPage !== "/pages/login" && (
-        <Box
-          className="borderGreen"
-          display={{ base: "none", md: "flex" }}
-          flexDirection="row"
-          justifyContent="center"
-          alignItems="center"
-          gap={{ base: 4, md: 8 }}
-        >
-          <Link href="/pages/contact-us/" passHref>
+      <Box
+        className="borderGreen"
+        display={{ base: "none", md: "flex" }}
+        flexDirection="row"
+        justifyContent="center"
+        alignItems="center"
+        gap={{ base: 4, md: 8 }}
+      >
+        <Link href="/pages/contact-us/" passHref>
+          <Button
+            fontSize={{ base: "sm", md: "md", lg: "lg" }}
+            padding={{ base: "6px 12px", md: "8px 16px", lg: "10px 20px" }}
+            colorScheme="blue"
+            variant="outline"
+          >
+            Contact us
+          </Button>
+        </Link>
+
+        {session ? (
+          <>
+            <Text>{session.user.email}</Text>
             <Button
               fontSize={{ base: "sm", md: "md", lg: "lg" }}
               padding={{ base: "6px 12px", md: "8px 16px", lg: "10px 20px" }}
-              colorScheme="blue"
-              variant="outline"
+              onClick={() => signOut()}
             >
-              Contact us
+              Logout
             </Button>
-          </Link>
-
-          <Link href="/pages/login/" passHref>
+          </>
+        ) : (
+          <Link href="/pages/login" passHref>
             <Button
               fontSize={{ base: "sm", md: "md", lg: "lg" }}
               padding={{ base: "6px 12px", md: "8px 16px", lg: "10px 20px" }}
@@ -83,8 +95,8 @@ export default function Header() {
               Login
             </Button>
           </Link>
-        </Box>
-      )}
+        )}
+      </Box>
 
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
@@ -105,17 +117,25 @@ export default function Header() {
                 </Button>
               </Link>
 
-              <Link href="/pages/login/" passHref>
+              {session ? (
+                <Button
+                  width="100%"
+                  colorScheme="blue"
+                  onClick={() => signOut()}
+                >
+                  Logout
+                </Button>
+              ) : (
                 <Button
                   width="100%"
                   bgColor="#05A2FF"
                   color="white"
                   _hover={{ bgColor: "#047ACC" }}
-                  onClick={onClose}
+                  onClick={() => signIn()}
                 >
                   Login
                 </Button>
-              </Link>
+              )}
             </VStack>
           </DrawerBody>
         </DrawerContent>

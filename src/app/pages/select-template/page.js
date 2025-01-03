@@ -1,5 +1,5 @@
 import Card from "@/Components/Card/Card";
-import { Box, Text, Heading, Image, Button, Divider } from "@chakra-ui/react";
+import { Box, Text, Heading, Divider } from "@chakra-ui/react";
 import Link from "next/link";
 
 import React from "react";
@@ -27,9 +27,17 @@ export default function page() {
         <Text fontSize="18px" color="gray.700" mt="4">
           Easy-to-use, professionally designed resume templates to help you land
           your dream job — get started for free today!
-          <Text as="span" color="blue.500" fontWeight="600" cursor="pointer">
-            &nbsp;&nbsp;&nbsp;Explore later
-          </Text>
+          <Link href="/pages/resume/" passHref>
+            <Text
+              as="span"
+              color="blue.500"
+              fontWeight="600"
+              cursor="pointer"
+              _hover={{ textDecoration: "underline" }}
+            >
+              &nbsp;&nbsp;&nbsp;Explore later
+            </Text>
+          </Link>
         </Text>
       </Box>
 

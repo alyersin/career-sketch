@@ -12,6 +12,9 @@ export default function Card({
       borderWidth="1px"
       borderRadius="lg"
       overflow="hidden"
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
       boxShadow="md"
       p={4}
       bgColor="white"

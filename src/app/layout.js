@@ -1,6 +1,7 @@
 "use client";
 
 import { ChakraProvider } from "@chakra-ui/react";
+import { SessionProvider } from "next-auth/react";
 import { usePathname } from "next/navigation";
 import theme from "../theme";
 import Header from "@/Components/Header/Header";
@@ -14,13 +15,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body suppressHydrationWarning>
-        <ChakraProvider theme={theme}>
-          {!hideHeaderAndFooterOn.includes(pathname) && <Header />}
-
-          {children}
-
-          {!hideHeaderAndFooterOn.includes(pathname) && <Footer />}
-        </ChakraProvider>
+        <SessionProvider>
+          <ChakraProvider theme={theme}>
+            {!hideHeaderAndFooterOn.includes(pathname) && <Header />}
+            {children}
+            {!hideHeaderAndFooterOn.includes(pathname) && <Footer />}
+          </ChakraProvider>
+        </SessionProvider>
       </body>
     </html>
   );
