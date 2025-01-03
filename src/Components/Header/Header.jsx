@@ -13,6 +13,11 @@ import {
   VStack,
   IconButton,
   Text,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Avatar,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import Link from "next/link";
@@ -73,16 +78,34 @@ export default function Header() {
         </Link>
 
         {session ? (
-          <>
-            <Text>{session.user.email}</Text>
-            <Button
-              fontSize={{ base: "sm", md: "md", lg: "lg" }}
-              padding={{ base: "6px 12px", md: "8px 16px", lg: "10px 20px" }}
-              onClick={() => signOut()}
+          <Menu>
+            <MenuButton
+              as={Button}
+              rounded="full"
+              variant="link"
+              cursor="pointer"
+              minW={0}
             >
-              Logout
-            </Button>
-          </>
+              <Avatar
+                size="sm"
+                name={session.user.name}
+                src={session.user.image}
+              />
+            </MenuButton>
+            <MenuList>
+              <MenuItem>
+                <Link href="/pages/profile/" passHref>
+                  Profile
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Link href="/pages/cv/" passHref>
+                  CV
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={() => signOut()}>Logout</MenuItem>
+            </MenuList>
+          </Menu>
         ) : (
           <Link href="/pages/login" passHref>
             <Button
@@ -118,13 +141,25 @@ export default function Header() {
               </Link>
 
               {session ? (
-                <Button
-                  width="100%"
-                  colorScheme="blue"
-                  onClick={() => signOut()}
-                >
-                  Logout
-                </Button>
+                <>
+                  <Link href="/pages/profile/" passHref>
+                    <Button width="100%" onClick={onClose}>
+                      Profile
+                    </Button>
+                  </Link>
+                  <Link href="/pages/cv/" passHref>
+                    <Button width="100%" onClick={onClose}>
+                      CV
+                    </Button>
+                  </Link>
+                  <Button
+                    width="100%"
+                    colorScheme="blue"
+                    onClick={() => signOut()}
+                  >
+                    Logout
+                  </Button>
+                </>
               ) : (
                 <Button
                   width="100%"
