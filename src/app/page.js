@@ -4,6 +4,7 @@ import TopSection from "@/Components/TopSection/TopSection";
 import ReviewsSection from "@/Components/ReviewSection/ReviewSection";
 import ResumeSlider from "@/Components/ResumeSlider/ResumeSlider";
 import FAQ from "@/Components/FAQ/FAQ";
+import ContactUs from "@/Components/ContactUs/ContactUs";
 
 export default function Home() {
   return (
@@ -22,6 +23,10 @@ export default function Home() {
 
       <Box>
         <FAQ />
+      </Box>
+
+      <Box id="contact-us" paddingBottom={20}>
+        <ContactUs />
       </Box>
     </Box>
   );

@@ -12,7 +12,6 @@ import {
   DrawerBody,
   VStack,
   IconButton,
-  Text,
   Menu,
   MenuButton,
   MenuList,
@@ -20,6 +19,7 @@ import {
   Avatar,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import { Link as ScrollLink } from "react-scroll"; // Import react-scroll
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
@@ -42,12 +42,14 @@ export default function Header() {
       py={{ base: 4, md: 6 }}
       px={{ base: 4, md: 10 }}
     >
+      {/* Logo Section */}
       <Box className="borderGreen" width="fit-content">
         <Link href="/" passHref>
           <Image src="/logo-2.png" alt="logo" width={180} height={140} />
         </Link>
       </Box>
 
+      {/* Hamburger Menu for Small Screens */}
       <Box display={{ base: "block", md: "none" }}>
         <IconButton
           icon={<HamburgerIcon />}
@@ -58,6 +60,7 @@ export default function Header() {
         />
       </Box>
 
+      {/* Main Navigation for Larger Screens */}
       <Box
         className="borderGreen"
         display={{ base: "none", md: "flex" }}
@@ -66,17 +69,30 @@ export default function Header() {
         alignItems="center"
         gap={{ base: 4, md: 8 }}
       >
-        <Link href="/pages/contact-us/" passHref>
+        {/* Smooth Scrolling "Contact Us" Button */}
+        <ScrollLink
+          to="contact-us" // Target the section with id="contact-us"
+          smooth={true}
+          duration={800} // Smooth scrolling duration (in ms)
+          offset={-50} // Optional offset to adjust position
+        >
           <Button
             fontSize={{ base: "sm", md: "md", lg: "lg" }}
             padding={{ base: "6px 12px", md: "8px 16px", lg: "10px 20px" }}
             colorScheme="blue"
             variant="outline"
+            transition="all 0.2s ease-in-out"
+            _hover={{
+              transform: "scale(1.1)",
+              bg: "blue.500",
+              color: "white",
+            }}
           >
             Contact us
           </Button>
-        </Link>
+        </ScrollLink>
 
+        {/* User Menu */}
         {session ? (
           <Menu>
             <MenuButton
@@ -121,6 +137,7 @@ export default function Header() {
         )}
       </Box>
 
+      {/* Drawer for Small Screens */}
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent>
@@ -129,17 +146,20 @@ export default function Header() {
 
           <DrawerBody>
             <VStack spacing={4} align="stretch">
-              <Link href="/pages/contact-us/" passHref>
-                <Button
-                  width="100%"
-                  colorScheme="blue"
-                  variant="outline"
-                  onClick={onClose}
-                >
+              {/* Drawer "Contact Us" Button */}
+              <ScrollLink
+                to="contact-us"
+                smooth={true}
+                duration={800}
+                offset={-50}
+                onClick={onClose}
+              >
+                <Button width="100%" colorScheme="blue" variant="outline">
                   Contact us
                 </Button>
-              </Link>
+              </ScrollLink>
 
+              {/* Drawer User Menu */}
               {session ? (
                 <>
                   <Link href="/pages/profile/" passHref>
