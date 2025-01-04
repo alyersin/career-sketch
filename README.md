@@ -93,7 +93,7 @@ Customize the app's theme by editing the `theme.js` file in the root directory. 
 
 ### Home Page
 
-> <img src="./public/homepage_ss.png" alt="Home page of Career-Sketch" width="500"/>
+> <img src="./public/career-sketch_ss.png" alt="Screenshot of Career-Sketch" width="500"/>
 
 ### Resume Builder
 
@@ -131,7 +131,7 @@ This project is not licensed.
 
 ## 🖤 Credits
 
-- **Developed By**: [Your Name/Team Name]
+- **Developed By**: Ersin
 - **UI Framework**: Chakra UI
 - **Icons**: React Icons
 - **Animations**: Framer Motion
