@@ -39,13 +39,13 @@ export default function Header() {
       alignItems="center"
       maxWidth={1280}
       mx="auto"
-      py={{ base: 4, md: 6 }}
+      py={{ base: 1, md: 3 }}
       px={{ base: 4, md: 10 }}
     >
       {/* Logo Section */}
       <Box className="borderGreen" width="fit-content">
         <Link href="/" passHref>
-          <Image src="/logo-2.png" alt="logo" width={180} height={140} />
+          <Image src="/logo1234.png" alt="logo" width={200} height={20} />
         </Link>
       </Box>
 
